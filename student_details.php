@@ -37,6 +37,10 @@ while($test = mysql_fetch_array($result))
 	<input type="hidden" name="userid_status" value="<?php echo $sid ?>">
     <?php echo '<td><input name="sub2" type="submit" value="'.$test['status'].'"></td>';?>
 </form>
+<form name="c" method="post" action="admin_profile_del_student.php">
+	<input type="hidden" name="userid_del" value="<?php echo $sid ?>">
+    <?php echo '<td><input name="sub3" type="submit" value="Delete"></td>';?>
+</form>
 </body>
 </html>
 <?php
