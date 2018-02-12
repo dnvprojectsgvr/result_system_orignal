@@ -128,7 +128,7 @@
 			<div>
 				<label for="mo">Mobile no&nbsp;</label>
 				<input type="text" value="+91" size="1" name="modigit" disabled>
-				<input type="text" name="mo" id="moi" maxlength="10" placeholder="eg:-9587823867" onBlur="mob()" onkeypress="return isNumber(event)" onChange="genusi()" required>
+				<input type="text" name="mo" id="moi" maxlength="10" placeholder="eg:-9587823867" onBlur="mob()" onkeypress="return isNumber(event)" required>
 				<span id="moerr"></span>
 			</div>
 			<div>

@@ -204,6 +204,7 @@ function dt_check()
   var d=document.p.birthday_day;
   var m=document.p.birthday_month;
   var y=document.p.birthday_year;
+  var selectobject=document.getElementById("day")
   if(d.value==0)
   { 
     document.getElementById('birtherr').innerHTML="Select Day";
@@ -224,12 +225,27 @@ function dt_check()
   }
   else if((m.value==2) && (d.value>29) && (isLeapYear(y.value)))
   {
+  	for (var i=0; i<selectobject.length; i++)
+  {
+  {
+  	if (selectobject.options[i].value > 29)
+     selectobject.remove(i);
+  }
+  }
+  	document.getElementById('day').
     document.getElementById('birtherr').innerHTML="Invalid Date";
     document.getElementById('day').style.borderColor="#FF0000";
     return false;
   }
   else if((m.value==2) && (d.value>28) && (!isLeapYear(y.value)))
   {
+  		for (var i=0; i<selectobject.length; i++)
+  {
+  {
+  	if (selectobject.options[i].value > 28)
+     selectobject.remove(i);
+  }
+  }
     document.getElementById('birtherr').innerHTML="Invalid Date";
     document.getElementById('day').style.borderColor="#FF0000";
     return false;

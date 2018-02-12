@@ -41,7 +41,9 @@ list($y,$m,$d)=explode('-', $dobn);
 <div><label for="funam">Full Name&nbsp;</label><input type="text" name="funam" id="fullname" placeholder="Full Name" onBlur="fu()" onKeyPress="return lettersOnly(event)" value="<?php echo $fulln ?>"><span id="fuerr"></span></div>
 <div><label for="fanam">Father Name&nbsp;</label><input type="text" name="fanam" placeholder="Father Name" onBlur="fan()" onKeyPress="return lettersOnly(event)" value="<?php echo $fathn ?>"><span id="faerr"></span></div>
 <div><label for="gen">Gender&nbsp;</label><input type="radio" name="gen" value="Male" <?php if($gender=="male") echo "checked" ?>>Male
-<input type="radio" name="gen" value="Female" <?php if($gender=="female") echo "checked" ?>>Female<span id="generr"></span></div>
+<input type="radio" name="gen" value="Female" <?php if($gender=="female") echo "checked" ?>>Female
+<input type="radio" name="gen" value="other" <?php if($gender=="other") echo "checked" ?> onclick="javascript: return false;">Other
+<span id="generr"></span></div>
 <div><label for="dob">Date Of Birth&nbsp;</label><select name="birthday_day" id="day" title="Day" onblur="dt_check()">
 <option value="0" <?php if($d==0) echo "selected" ?>>Day</option>
 <?php for($i=1;$i<32;$i++){
@@ -120,20 +122,19 @@ $uidl=strtolower($uid);
 $uid1=$_POST['uid1'];
 include('db_conn.php');
 
-$query="update student_details set student_id='$uidl',f_name='$fnaml',m_name='$mnaml',l_name='$lnaml',full_name='$funaml',father_name='$fanaml',gender='$gen',admin_year='$admin_year',roll_no='$roll',course='$course',dob='$dob' where student_id='$uid1'";
+$query="update student_details set f_name='$fnaml',m_name='$mnaml',l_name='$lnaml',full_name='$funaml',father_name='$fanaml',gender='$gen',admin_year='$admin_year',roll_no='$roll',course='$course',dob='$dob' where student_id='$uidl'";
 $query1="update users_details set user_id='$uidl' where user_id='$uid1'";
-echo "$query"."<br>";
-echo "$query1"."<br>";
 mysql_query($query1)or die("error in user_id");
 mysql_query($query)or die("error in student_id");
-if(!$query && !$query1)
-{
-	echo "error in query";
-}
-else
-{
-	echo "Detials Updated";
-	header("Location:student_details.php");
-}
+header("Location:student_details.php");
+// if(!$query && !$query1)
+// {
+// 	echo "error in query";
+// }
+// else
+// {
+// 	echo "Detials Updated";
+// 	header("Location:student_details.php");
+// }
 }
 ?>

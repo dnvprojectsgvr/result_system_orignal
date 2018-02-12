@@ -40,7 +40,9 @@ list($y,$m,$d)=explode('-', $dobn);
 <div><label for="funam">Full Name&nbsp;</label><input type="text" name="funam" id="fullname" placeholder="Full Name" onBlur="fu()" onKeyPress="return lettersOnly(event)" value="<?php echo $fulln ?>" readonly><span id="fuerr"></span></div>
 <div><label for="fanam">Father Name&nbsp;</label><input type="text" name="fanam" placeholder="Father Name" onBlur="fan()" onKeyPress="return lettersOnly(event)" value="<?php echo $fathn ?>" readonly><span id="faerr"></span></div>
 <div><label for="gen">Gender&nbsp;</label><input type="radio" name="gen" value="Male" <?php if($gender=="male") echo "checked" ?> onclick="javascript: return false;">Male
-<input type="radio" name="gen" value="Female" <?php if($gender=="female") echo "checked" ?> onclick="javascript: return false;">Female<span id="generr"></span></div>
+<input type="radio" name="gen" value="Female" <?php if($gender=="female") echo "checked" ?> onclick="javascript: return false;">Female
+<input type="radio" name="gen" value="other" <?php if($gender=="other") echo "checked" ?> onclick="javascript: return false;">Other
+<span id="generr"></span></div>
 <div><label for="dob">Date Of Birth&nbsp;</label><select name="birthday_day" id="day" title="Day" onblur="dt_check()" disabled>
 <option value="0" <?php if($d==0) echo "selected" ?>>Day</option>
 <?php for($i=1;$i<32;$i++){
