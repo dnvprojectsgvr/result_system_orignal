@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 12, 2018 at 07:43 AM
+-- Generation Time: Feb 13, 2018 at 08:40 PM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.10
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `course_details` (
   `stream_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `stream_id` (`stream_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `course_details`
@@ -42,7 +42,8 @@ CREATE TABLE IF NOT EXISTS `course_details` (
 
 INSERT INTO `course_details` (`id`, `course_name`, `stream_id`) VALUES
 (1, 'BCA', 1),
-(2, 'BBA', 2);
+(2, 'BBA', 2),
+(3, 'MSCIT', 1);
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `stream_details` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `stream_name` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `stream_details`
@@ -154,7 +155,8 @@ CREATE TABLE IF NOT EXISTS `stream_details` (
 
 INSERT INTO `stream_details` (`id`, `stream_name`) VALUES
 (1, 'SCIENCE'),
-(2, 'COMMERCE');
+(2, 'COMMERCE'),
+(3, 'ARTS');
 
 -- --------------------------------------------------------
 
