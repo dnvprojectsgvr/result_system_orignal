@@ -30,6 +30,9 @@ else
 </head>
 <body>
 <form>
+	<a href="criteria_name_add.php">Criteria Name Add</a>
+	<a href="criteria_marks_add.php">Criteria Marks Add</a>
+	<a href="students_list.php">Student List</a>
 	<a href="profile_edit_faculty.php">Profile Edit</a>
 	<a href="profile_changepassword.php">Profile ChangePassword</a>
     <a href="logout.php"> LOGOUT </a>

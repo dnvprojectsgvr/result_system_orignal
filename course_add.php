@@ -20,7 +20,6 @@ while($rs=mysql_fetch_array($query)){
 $select.='</select>';
 echo $select;
 ?>
-<!--<input type="text" name="stname" id="stname" placeholder="Stream Name" maxlength="45" onKeyPress="return lettersOnly(event)" required>-->
 <span id="stnerr"></span></div>
 <div><input type="submit" name="Submit" value="Submit">&nbsp;<input type="reset" name="Reset" value="Reset"></div>
 </form>

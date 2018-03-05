@@ -28,7 +28,7 @@ list($y,$m,$d)=explode('-', $dobn);
 <html>
 <head>
 <title>Profile Edit</title>
-<script src="student_reg.js"></script>
+<script src="faculty_reg.js"></script>
 <script src="jquery.min.js" type="text/javascript"></script>
 <script src="userid_faculty.js"></script>
 </head>

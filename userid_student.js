@@ -10,7 +10,7 @@ $("#status").html('<img src="loader.gif" align="absmiddle">&nbsp;Checking availa
 
 $.ajax({  
     type: "POST",  
-    url: "ajax.php",  
+    url: "userid_check.php",  
     data: "userid="+ userid,  
     success: function(msg){  
    $("#status").ajaxComplete(function(event, request){ 

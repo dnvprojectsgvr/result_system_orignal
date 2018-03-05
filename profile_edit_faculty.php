@@ -26,7 +26,7 @@ list($y,$m,$d)=explode('-', $dobn);
 <html>
 <head>
 <title>Profile Edit</title>
-<script src="student_reg.js"></script>
+<script src="faculty_reg.js"></script>
 </head>
 <body onLoad="document.p.fnam.focus()" bgcolor="LAVENDER">
 <h1>Registration Page</h1>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 13, 2018 at 08:40 PM
+-- Generation Time: Mar 05, 2018 at 01:34 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.10
 
@@ -55,7 +55,17 @@ CREATE TABLE IF NOT EXISTS `criteria_details` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `criteria_name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `criteria_details`
+--
+
+INSERT INTO `criteria_details` (`id`, `criteria_name`) VALUES
+(1, 'assignment'),
+(2, 'attendence'),
+(3, 'internal marks'),
+(4, 'practical');
 
 -- --------------------------------------------------------
 
@@ -71,7 +81,21 @@ CREATE TABLE IF NOT EXISTS `faculty_criteria_details` (
   PRIMARY KEY (`id`),
   KEY `faculty_sub_id` (`faculty_sub_id`),
   KEY `criteria_id` (`criteria_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+
+--
+-- Dumping data for table `faculty_criteria_details`
+--
+
+INSERT INTO `faculty_criteria_details` (`id`, `criteria_id`, `criteria_marks`, `faculty_sub_id`) VALUES
+(19, 1, 10, 1),
+(20, 2, 10, 1),
+(21, 3, 10, 1),
+(22, 4, 10, 1),
+(25, 1, 5, 2),
+(26, 2, 15, 2),
+(27, 3, 10, 2),
+(28, 4, 10, 2);
 
 -- --------------------------------------------------------
 
@@ -113,7 +137,15 @@ CREATE TABLE IF NOT EXISTS `faculty_subjects` (
   PRIMARY KEY (`id`),
   KEY `faculty_id` (`faculty_id`),
   KEY `subject_id` (`subject_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `faculty_subjects`
+--
+
+INSERT INTO `faculty_subjects` (`id`, `faculty_id`, `subject_id`) VALUES
+(1, 'ramesh12', 7),
+(2, 'ramesh12', 9);
 
 -- --------------------------------------------------------
 
@@ -127,15 +159,16 @@ CREATE TABLE IF NOT EXISTS `semester_details` (
   `course_id` int(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `course_id` (`course_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `semester_details`
 --
 
 INSERT INTO `semester_details` (`id`, `semester_name`, `course_id`) VALUES
-(1, 'SEM-1', 1),
-(2, 'SEM-2', 2);
+(3, 'Semester 1', 1),
+(4, 'Semester 2', 1),
+(5, 'Semester 3', 1);
 
 -- --------------------------------------------------------
 
@@ -173,7 +206,17 @@ CREATE TABLE IF NOT EXISTS `student_criteria_details` (
   PRIMARY KEY (`id`),
   KEY `faculty_criteria_id` (`faculty_criteria_id`),
   KEY `student_id` (`student_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `student_criteria_details`
+--
+
+INSERT INTO `student_criteria_details` (`id`, `student_id`, `faculty_criteria_id`, `obt_marks`, `out_marks`) VALUES
+(1, '2010bca20', 19, 8, 10),
+(2, '2010bca20', 20, 5, 10),
+(3, '2010bca20', 21, 8, 10),
+(4, '2010bca20', 22, 10, 10);
 
 -- --------------------------------------------------------
 
@@ -203,7 +246,9 @@ CREATE TABLE IF NOT EXISTS `student_details` (
 --
 
 INSERT INTO `student_details` (`student_id`, `f_name`, `m_name`, `l_name`, `full_name`, `father_name`, `gender`, `mob_no`, `email_id`, `admin_year`, `roll_no`, `course`, `dob`) VALUES
-('2010bca20', 'suresh', 'singh', 'chouhan', 'suresh singh chouhan', 'ganesh', 'male', 8768563476, 'suresh@gmail.com', 2010, 20, 'BCA', '1999-07-05');
+('2010bca20', 'suresh', 'singh', 'chouhan', 'suresh singh chouhan', 'ganesh', 'male', 8768563476, 'suresh@gmail.com', 2010, 20, 'BCA', '1999-07-05'),
+('2017bca28', 'aditya', '', 'singh', 'aditya  singh', 'baldev singh', 'male', 9773525612, 'adising09062000@gmail.com', 2017, 28, 'BCA', '2000-06-09'),
+('2010bba10', 'suresh', 'singh', 'chouhan', 'suresh singh chouhan', 'dinesh', 'male', 9897886486, 'suresh@gmail.com', 2010, 10, 'BBA', '1996-07-05');
 
 -- --------------------------------------------------------
 
@@ -219,16 +264,15 @@ CREATE TABLE IF NOT EXISTS `subjects_details` (
   `semester_id` int(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `semester_id` (`semester_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `subjects_details`
 --
 
 INSERT INTO `subjects_details` (`id`, `subjects_name`, `criteria_marks`, `is_practical`, `semester_id`) VALUES
-(1, 'PHP', 0, 1, 1),
-(2, 'ACCOUNTS', 0, 0, 2),
-(6, 'vb.net', 0, 1, 1);
+(7, 'c language', 40, 1, 3),
+(9, 'html', 40, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -251,7 +295,9 @@ CREATE TABLE IF NOT EXISTS `users_details` (
 --
 
 INSERT INTO `users_details` (`user_id`, `password`, `security_ques`, `security_ans`, `user_type`, `status`) VALUES
+('2010bba10', 'Suresh@12', 'favourite teacher', 'heena', 'student', 'active'),
 ('2010bca20', 'Suresh@12', 'favourite teacher', 'heena', 'student', 'active'),
+('2017bca28', 'Shivi%00', 'childhood friend', 'rakesh', 'student', 'active'),
 ('ramesh12', 'Ramesh@12', 'favourite teacher', 'geeta', 'faculty', 'active');
 
 --

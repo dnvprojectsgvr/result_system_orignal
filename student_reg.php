@@ -49,7 +49,7 @@ $secal=strtolower($seca);
   $cherr="Last name error"; }}?></div>
 <div><label for="funam">Full Name&nbsp;</label><input type="text" name="funam" id="fullname" placeholder="Full Name" maxlength="100" onBlur="fu()" onKeyPress="return lettersOnly(event)" required><span id="fuerr"></span><?php if($_POST){ if (!preg_match("/^[a-zA-Z ]*$/",$funam)) {
   $cherr="Full name error"; }}?></div>
-<div><label for="fanam">Father Name&nbsp;</label><input type="text" name="fanam" id="faname" placeholder="Father Name" maxlength="100" onBlur="fan()" onKeyPress="return lettersOnly(event)" required><span id="faerr"></span><?php if($_POST){ if (!preg_match("/^[a-zA-Z]*$/",$fanam)) {
+<div><label for="fanam">Father Name&nbsp;</label><input type="text" name="fanam" id="faname" placeholder="Father Name" maxlength="100" onBlur="fan()" onKeyPress="return lettersOnly(event)" required><span id="faerr"></span><?php if($_POST){ if (!preg_match("/^[a-zA-Z ]*$/",$fanam)) {
   $cherr="Father name error"; }}?></div>
 <div><label for="gen">Gender&nbsp;</label><input type="radio" name="gen" value="male" onBlur="ge()" required>Male
 <input type="radio" name="gen" value="female" onBlur="ge()" required>Female</span>
