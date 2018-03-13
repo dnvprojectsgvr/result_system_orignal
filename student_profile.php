@@ -34,6 +34,7 @@ else
 </head>
 <body>
 <form>
+	<a href="student_marks_show.php">Marks Show</a>
 	<a href="profile_edit_student.php">Profile Edit</a>
 	<a href="profile_changepassword.php">Profile ChangePassword</a>
     <a href="logout.php"> LOGOUT </a>

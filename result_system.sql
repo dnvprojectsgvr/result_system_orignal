@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 05, 2018 at 01:34 AM
+-- Generation Time: Mar 13, 2018 at 01:39 AM
 -- Server version: 5.5.20
 -- PHP Version: 5.3.10
 
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `student_criteria_details` (
   PRIMARY KEY (`id`),
   KEY `faculty_criteria_id` (`faculty_criteria_id`),
   KEY `student_id` (`student_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `student_criteria_details`
@@ -216,7 +216,15 @@ INSERT INTO `student_criteria_details` (`id`, `student_id`, `faculty_criteria_id
 (1, '2010bca20', 19, 8, 10),
 (2, '2010bca20', 20, 5, 10),
 (3, '2010bca20', 21, 8, 10),
-(4, '2010bca20', 22, 10, 10);
+(4, '2010bca20', 22, 10, 10),
+(5, '2017bca28', 19, 8, 10),
+(6, '2017bca28', 20, 7, 10),
+(7, '2017bca28', 21, 10, 10),
+(8, '2017bca28', 22, 10, 10),
+(9, '2017bca28', 25, 4, 5),
+(10, '2017bca28', 26, 11, 15),
+(11, '2017bca28', 27, 8, 10),
+(12, '2017bca28', 28, 9, 10);
 
 -- --------------------------------------------------------
 
